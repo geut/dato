@@ -1,0 +1,138 @@
+{
+  "name": "@geut/dato",
+  "productName": "Dato",
+  "author": "GEUT",
+  "version": "0.0.1",
+  "description": "Your shareable folder app",
+  "license": "MIT",
+  "repository": "geut/dato",
+  "scripts": {
+    "build": "webpack -p",
+    "dist": "electron-builder",
+    "pack": "electron-builder --dir",
+    "release": "np --no-publish --no-yarn --no-cleanup --any-branch",
+    "start": "webpack-dev-server",
+    "start:main": "electron .",
+    "test": "prettier-standard && standard && npm run test:integration",
+    "test:integration": "tap --no-cov"
+  },
+  "dependencies": {
+    "@corestore/networker": "^1.0.4",
+    "@electron/remote": "^1.0.2",
+    "@geut/hyperdrive-promise": "^3.1.0",
+    "@geut/swarm-hooks": "^1.0.0-beta.2",
+    "@modulz/radix-icons": "^3.3.0",
+    "classnames": "^2.2.6",
+    "corestore": "^5.8.1",
+    "dat-encoding": "^5.0.1",
+    "diff-file-tree": "^2.5.0",
+    "electron-debug": "^3.1.0",
+    "electron-devtools-installer": "^3.1.0",
+    "electron-log": "^4.2.4",
+    "electron-store": "^6.0.0",
+    "electron-updater": "^4.3.5",
+    "focus-visible": "^5.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "is-online": "^8.4.0",
+    "istextorbinary": "^5.12.0",
+    "niceware": "^2.0.1",
+    "node-fetch": "^2.6.0",
+    "p-timeout": "^3.2.0",
+    "pump": "^3.0.0",
+    "random-access-file": "^2.1.4",
+    "react": "^17.0.0",
+    "react-dnd": "^11.1.3",
+    "react-dnd-html5-backend": "^11.1.3",
+    "react-dom": "^17.0.0",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^5.2.0",
+    "react-use-clipboard": "^1.0.2",
+    "typeface-inter": "^1.1.13"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-export-default-from": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "7.12.1",
+    "@svgr/webpack": "^5.2.0",
+    "autoprefixer": "10.0.2",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "copy-webpack-plugin": "^6.2.1",
+    "crypto-browserify": "^3.12.0",
+    "css-loader": "^5.0.1",
+    "dnssd": "^0.4.1",
+    "electron": "^11.0.0",
+    "electron-builder": "^22.7.0",
+    "electron-builder-notarize": "^1.2.0",
+    "file-loader": "^6.0.0",
+    "np": "^6.3.2",
+    "postcss": "8.1.7",
+    "postcss-loader": "^4.1.0",
+    "prettier-standard": "^16.4.1",
+    "standard": "^16.0.0",
+    "stream-browserify": "^3.0.0",
+    "style-loader": "^2.0.0",
+    "tailwindcss": "^2.0.1",
+    "tap": "^14.9.2",
+    "webpack": "^4.0.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "dist"
+    ],
+    "env": [
+      "jest",
+      "node",
+      "browser"
+    ]
+  },
+  "build": {
+    "appId": "org.geut.dato",
+    "files": [
+      "**/*",
+      "build/**/*"
+    ],
+    "linux": {
+      "target": "AppImage"
+    },
+    "dmg": {
+      "window": {
+        "width": "416",
+        "height": "200"
+      },
+      "iconSize": "64",
+      "contents": [
+        {
+          "x": 100,
+          "y": 100,
+          "type": "file",
+          "name": ""
+        },
+        {
+          "x": 320,
+          "y": 100,
+          "type": "link",
+          "path": "/Applications",
+          "name": ""
+        }
+      ]
+    },
+    "mac": {
+      "hardenedRuntime": true
+    },
+    "protocols": {
+      "name": "dato",
+      "schemes": [
+        "dato"
+      ]
+    }
+  }
+}
