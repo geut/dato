@@ -39,10 +39,10 @@ const ModalAction = ({ onCancel, onConfirm }) => {
 
 const TextArea = ({ label, initial, onKeyPress, customRef }) => {
   return (
-    <div class='relative w-full appearance-none label-floating'>
+    <div className='relative w-full appearance-none label-floating'>
       <textarea
         ref={customRef}
-        class='autoexpand tracking-wide py-2 px-4 mb-3 leading-relaxed appearance-none block w-full bg-gray-200 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500'
+        className='autoexpand tracking-wide py-2 px-4 mb-3 leading-relaxed appearance-none block w-full bg-gray-200 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500'
         id='textarea'
         type='text'
         defaultValue={initial.join(' ')}
@@ -50,7 +50,7 @@ const TextArea = ({ label, initial, onKeyPress, customRef }) => {
       ></textarea>
       <label
         htmlFor='textarea'
-        class='absolute tracking-wide py-2 px-4 mb-4 opacity-0 leading-tight block top-0 left-0 cursor-text'
+        className='absolute tracking-wide py-2 px-4 mb-4 opacity-0 leading-tight block top-0 left-0 cursor-text'
       >
         {label}
       </label>
